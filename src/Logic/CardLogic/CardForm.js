@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams, useLocation } from "react-router-dom";
-import { createCard, updateCard, readCard } from "../../utils/api";
+import { createCard, updateCard, readCard } from "../../utils/api"; // Provided for me
 
 function CardForm({ deck }) {
   //useHistory lets you access the history instance used by React Router.
@@ -45,11 +45,11 @@ function CardForm({ deck }) {
   }, [pathname, cardId]);
 
   function handleFront(event) {
-    setFront({ ...front, front: event.target.value });
+    setFront({ ...front, "front": event.target.value });
   }
 
   function handleBack(event) {
-    setBack({ ...back, back: event.target.value });
+    setBack({ ...back, "back": event.target.value });
   }
 
   function handleCancelAndDone() {
@@ -63,8 +63,8 @@ function CardForm({ deck }) {
 
   function onSave() {
     createCard(parseInt(deckId), { ...front, ...back });
-    setFront({ front: "" });
-    setBack({ back: "" });
+    setFront({ "front": "" });
+    setBack({ "back": "" });
   }
 
   if (!front || !back) return null;
@@ -96,7 +96,7 @@ function CardForm({ deck }) {
 
         <button
           type="button"
-          className="btn btn-outline-secondary mr-1"
+          className="btn btn-outline-secondary"
           onClick={handleCancelAndDone}
         >
           {isEdit ? "Cancel" : "Done"}

@@ -15,8 +15,8 @@ function DeckForm({ deck }) {
   // 1. Current State: refers to the current state of this state variable, initially set when implementing useState()
   // 2. Set Function: refres to a function that lets you change it to any other value in response to interaction.
   const [isEdit, setIsEdit] = useState(true);
-  const [name, setName] = useState({ name: "" }); //use an object to update the name object later in the app
-  const [description, setDescription] = useState({ description: "" }); //use an object to update the description object later in the app
+  const [name, setName] = useState({ "name": "" }); //use an object to update the name object later in the app
+  const [description, setDescription] = useState({ "description": "" }); //use an object to update the description object later in the app
 
   //Add useEffect to edit
   //useEffect passes two arguments:
@@ -28,9 +28,9 @@ function DeckForm({ deck }) {
       if (pathname.includes("edit")) {
         //if the location/path includes edit
         //set Name to the prop deck name
-        setName({ name: deck.name });
+        setName({ "name": deck.name });
         //set Description to prop deck description
-        setDescription({ description: deck.description });
+        setDescription({ "description": deck.description });
       } else {
         //set isEdit to False
         setIsEdit(false);
@@ -44,12 +44,12 @@ function DeckForm({ deck }) {
   function handleName(event) {
     setName({
       ...name, // passes the previous names
-      name: event.target.value,
+      "name": event.target.value,
     }); // Sets the name of the new deck
   }
   //Create a function to handle description
   function handleDescription(event) {
-    setDescription({ ...description, description: event.target.value });
+    setDescription({ ...description, "description": event.target.value });
   }
 
   //Create a function to handle Creation
@@ -62,7 +62,7 @@ function DeckForm({ deck }) {
 
   //Create a function to handle update
   function onUpdate() {
-    updateDeck({ id: deck.id, ...name, ...description }); //run update from the provided index
+    updateDeck({ "id": deck.id, ...name, ...description }); //run update from the provided index
     history.push(`/decks/${deck.id}`); //Redirects the user to the updated deckes page
   }
 
@@ -77,7 +77,7 @@ function DeckForm({ deck }) {
             className="form-control"
             id="name"
             value={name.name || ""}
-            placeholder={isEdit ? null : "Deck Name: "}
+            placeholder={isEdit ? null : "Deck Name"}
             onChange={handleName}
           />
         </div>
@@ -88,7 +88,7 @@ function DeckForm({ deck }) {
             id="description"
             rows="3"
             value={description.description || ""}
-            placeholder={isEdit ? null : "Deck Description: "}
+            placeholder={isEdit ? null : "Deck Description"}
             onChange={handleDescription}
           ></textarea>
         </div>

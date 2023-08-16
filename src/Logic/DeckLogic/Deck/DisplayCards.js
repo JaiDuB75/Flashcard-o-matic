@@ -31,7 +31,9 @@ function DisplayCards({ deck }) {
   if (!cards) return null;
 
   //return card screen
-  return cards.map((card) => {
+  return (
+    
+    cards.map((card) => {
     //function to handle deletion
     function onDelete(event) {
       if (window.confirm("Confirm Delete")) {
@@ -51,9 +53,9 @@ function DisplayCards({ deck }) {
       <div className="col-sm-6" key={card.id}>
         <div className="card">
           <div className="card-body">
-            <p className="card-text">Front: {card.front}</p>
+            <p className="card-text">{card.front}</p>
 
-            <p className="card-text">Back: {card.back}</p>
+            <p className="card-text">{card.back}</p>
             <div className="d-flex justify-content-end">
               <Link
                 to={`${url}/cards/${card.id}/edit`}
@@ -62,19 +64,22 @@ function DisplayCards({ deck }) {
                 Edit
               </Link>
               <button
-                className="btn btn-danger-outline"
+                className="btn btn-outline-danger"
                 onMouseDown={(event) =>
                   (event.target.parentElement.parentElement.style.backgroundColor =
                     "#E8eff1")
                 }
                 onClick={onDelete}
-              ></button>
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>
       </div>
-    );
-  });
+     );
+   })
+  ); 
 }
 
 export default DisplayCards;

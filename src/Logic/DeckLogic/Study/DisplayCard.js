@@ -37,7 +37,7 @@ function DisplayCard({ deck }) {
     setSide(true); //Sets the correct side when moving to the previous card
   }
 
-    if(allCards.length < 3){
+    if(!allCards || allCards.length < 3){
         return <NotEnoughCards allCards={allCards}/>
     }
 
@@ -48,7 +48,7 @@ function DisplayCard({ deck }) {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">
-              Card: {card + 1} of {allCards.length}
+              Card {card + 1} of {allCards.length}
             </h5>
             <p className="card-text">
               {side ? allCards[card].front : allCards[card].back}
@@ -56,20 +56,20 @@ function DisplayCard({ deck }) {
             {card >= 1 ? (
               <button
                 id="previous"
-                className="btn btn-primary-outline"
+                className="btn btn-outline-primary"
                 onClick={Previous}
               >
                 Previous
               </button>
             ) : null}
             <button
-              className="btn btn-secondary-outline mx-2"
+              className="btn btn-outline-secondary"
               onClick={onFlip}
             >
               Flip
             </button>
             {!side ? (
-              <button className="btn btn-primary-outline" onClick={Next}>
+              <button className="btn btn-outline-primary" onClick={Next}>
                 Next
               </button>
             ) : null}

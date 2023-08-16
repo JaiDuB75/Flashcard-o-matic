@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 function CreateDeckButton(){
     return(
         <div className="row">
-            <div className="col-sm-6 mb-1">
+            <div className="col-sm-6">
                 <Link to="/decks/new" className="btn btn-outline-primary">Create a New Deck</Link>
             </div>
         </div>

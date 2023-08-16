@@ -29,7 +29,7 @@ function ShowDecks() {
     const cards = deck.cards;
 
     function onDelete(event) {
-      if (window.confirm("Delete Deck")) {
+      if (window.confirm("Confirm Delete Deck")) {
         deleteDeck(deck.id);
         setDecks((previousDeck) => {
           const newDeck = previousDeck.filter((item) => item.id !== deck.id);
@@ -48,7 +48,7 @@ function ShowDecks() {
           <div className="card-body">
             <div className="d-flex justify-content-between">
               <h5 className="card-title">{deck.name}</h5>
-              <p>{`${cards.length} cards in ${deck.name}`}</p>
+              <p>{cards.length} cards</p>
             </div>
             <p className="card-text">{deck.description}</p>
             <div className="d-flex justify-content-between">

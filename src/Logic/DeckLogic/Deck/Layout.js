@@ -9,6 +9,7 @@ import Cards from "../../CardLogic/layout";
 
 
 function Deck(){
+     //useRouteMatch returns a match object that contains all the information like how the current URL matched with the Route path.
     const {path} = useRouteMatch();
 
     return(

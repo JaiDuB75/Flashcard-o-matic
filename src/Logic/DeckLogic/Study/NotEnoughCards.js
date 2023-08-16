@@ -8,13 +8,18 @@ function NotEnoughCards({ allCards }) {
   // We need access to the deckId
   const { deckId } = useParams();
 
+  let numCards = 0; 
+  if(allCards && allCards.length){
+    numCards = allCards.length; 
+  }
+
   return (
     <>
     <div style={{textAlign:"center"}}>
-    <h3 style={{textAlign:"center"}}>There are not enough Cards in the Deck</h3>
-      <p style={{textAlign:"center"}}>
+    <h3>There are not enough Cards in the Deck</h3>
+      <p>
         There needs to at least 3 cards in the deck to study. There are:{" "}
-        {allCards.length} cards in this deck
+        {numCards} cards in this deck
       </p>
       <Link
         to={`/decks/${deckId}/cards/new`}

@@ -42,11 +42,11 @@ function View() {
   //return the screen for the view
   return (
     <>
-      <div className="col-sm-12 p-0">
+      <div className="col-sm-12">
         <div className="card" style={{ border: "none" }}>
           <div className="card-body">
-            <h4 className="card-title">Deck Name: {deck.name}</h4>
-            <p className="card-text">Deck Description: {deck.description}</p>
+            <h4 className="card-title">{deck.name}</h4>
+            <p className="card-text">{deck.description}</p>
             <div className="d-flex justify-content-between">
               <div>
                 <Link to={`${url}/edit`} className="btn btn-outline-secondary">
@@ -72,8 +72,8 @@ function View() {
                     } else {
                       history.push(`${url}`); //redirects the user
                     }
-                  }}
-                >
+                  }
+                }>
                   Delete Deck
                 </button>
               </div>
@@ -82,7 +82,7 @@ function View() {
         </div>
       </div>
       <div className="container">
-        <h1>Cards</h1>
+        <h5>{deck.name} Cards</h5>
       </div>
       <DisplayCards deck={deck} />
     </>

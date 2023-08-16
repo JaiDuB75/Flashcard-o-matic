@@ -7,7 +7,7 @@ import DisplayCard from "./DisplayCard";
 
 function StudyView() {
   const { deckId } = useParams();
-  const [deck, setDeck] = useState(null);
+  const [deck, setDeck] = useState({});
 
   useEffect(() => {
     async function getDeck() {
@@ -21,7 +21,7 @@ function StudyView() {
 
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>{`Studying: ${deck.name}`}</h1>
+      <h1 style={{ textAlign: "center" }}>{deck.name}</h1>
       <DisplayCard deck={deck} />
     </>
   );
