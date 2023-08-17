@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { readDeck } from "../../../utils/api";
 import DisplayCard from "./DisplayCard";
+import Navbar from "./Navbar";
 
 function StudyView() {
   const { deckId } = useParams();
@@ -21,6 +22,7 @@ function StudyView() {
 
   return (
     <>
+      <Navbar deck={deck}/>
       <h1 style={{ textAlign: "center" }}>{deck.name}</h1>
       <DisplayCard deck={deck} />
     </>

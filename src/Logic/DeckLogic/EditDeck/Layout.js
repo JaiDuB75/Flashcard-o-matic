@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DeckForm from "../DeckForm";
 import { readDeck } from "../../../utils/api";
+import Navbar from "./Navbar";
 
 function EditDeck() {
   // Using useParams allows us to use the params from the URL/Route
@@ -29,6 +30,7 @@ function EditDeck() {
   if (!deck) return null;
   return (
     <>
+      <Navbar deck={deck}/>
       <h1>Edit Deck</h1>
       <DeckForm deck={deck} />
     </>

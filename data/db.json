@@ -14,11 +14,6 @@
       "name": "Not Enough Cards",
       "description": "This is a deck with less than 3 cards",
       "id": 3
-    },
-    {
-      "name": "Test Deck",
-      "description": "Test Deck ",
-      "id": 4
     }
   ],
   "cards": [
@@ -59,10 +54,10 @@
       "back": "Test"
     },
     {
-      "front": "sdfghjkl",
-      "back": "dfghjkl",
+      "id": 8,
       "deckId": 1,
-      "id": 8
+      "front": "sdfghjklfd",
+      "back": "dfghjkljay"
     },
     {
       "front": "1 card",

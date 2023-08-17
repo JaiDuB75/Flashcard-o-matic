@@ -6,6 +6,7 @@ import View from "./View";
 import StudyView from "../Study/layout";
 import EditDeck from "../EditDeck/Layout";
 import Cards from "../../CardLogic/layout";
+import Navbar from "./Navbar";
 
 
 function Deck(){
@@ -16,6 +17,7 @@ function Deck(){
         <>
             <Switch>
                 <Route exact path={`${path}`}>
+                    <Navbar/>
                     <div className="row">
                         <View />
                     </div>
