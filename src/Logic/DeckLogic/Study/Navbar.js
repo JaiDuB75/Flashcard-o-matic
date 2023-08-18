@@ -12,7 +12,7 @@ function Navbar({deck}){
                 </li>
                 <li className="breadcrumb-item">
                     <Link to={`/decks/${deck.id}`}>
-                        {deck.name}
+                        {deck.id}
                     </Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
